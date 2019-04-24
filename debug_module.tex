@@ -401,13 +401,13 @@ Mode, and \Fcmderr is set to 3 ({\tt exception error}).  If the debugger
 executes a program that doesn't terminate with an {\tt ebreak} instruction, the
 hart will remain in Debug Mode and the debugger will lose control of the hart.
 
-Executing the Program Buffer may clobber \Rdpc. If that is the case, it must be
+Executing the Program Buffer may arbitrarily update \Rdpc. If that is the case, it must be
 possible to read/write \Rdpc using an abstract command with \Fpostexec not set.
 The debugger must attempt to save \Rdpc between halting and
 executing a Program Buffer, and then restore \Rdpc before leaving Debug Mode.
 
 \begin{commentary}
-    Allowing Program Buffer execution to clobber \Rdpc allows for direct
+    Allowing Program Buffer execution to arbitrarily update \Rdpc allows for direct
     implementations that don't have a separate PC register, and do need to use
     the PC when executing the Program Buffer.
 \end{commentary}
