@@ -398,7 +398,7 @@ While these programs are executed, the hart does not leave Debug Mode (see
 Section~\ref{debugmode}).  If an exception is encountered during execution of
 the Program Buffer, no more instructions are executed, the hart remains in Debug
 Mode, and \Fcmderr is set to 3 ({\tt exception error}).  If the debugger
-executes a program that doesn't terminate with an {\tt ebreak} instruction, the
+executes a program that doesn't terminate with an {\tt ebreak} or {\tt c.ebreak} instruction, the
 hart will remain in Debug Mode and the debugger will lose control of the hart.
 
 Executing the Program Buffer may clobber \Rdpc. If that is the case, it must be
