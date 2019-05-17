@@ -421,7 +421,7 @@
 
     <register name ="Abstract Command Autoexec" short="abstractauto" address="0x18">
         This register is optional. Including it allows more efficient burst
-        accesses.  A debugger can detect whether it is support by setting bits
+        accesses.  A debugger can detect whether it is supported by setting bits
         and reading them back.
 
         Writing this register while an abstract command is executing causes
@@ -479,7 +479,7 @@
         Accessing these registers while an abstract command is executing causes
         \Fcmderr to be set to 1 (busy) if it is 0.
 
-        Attempts to write them while \Fbusy is set does not change their value.
+        Attempts to write them while \Fbusy is set do not change their value.
 
         The values in these registers may not be preserved after an abstract
         command is executed. The only guarantees on their contents are the ones
@@ -512,7 +512,7 @@
         Accessing these registers while an abstract command is executing causes
         \Fcmderr to be set to 1 (busy) if it is 0.
 
-        Attempts to write them while \Fbusy is set does not change their value.
+        Attempts to write them while \Fbusy is set do not change their value.
 
         <field name="data" bits="31:0" access="R/W" reset="0" />
     </register>
