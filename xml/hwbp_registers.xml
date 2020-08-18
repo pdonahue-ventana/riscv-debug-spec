@@ -168,6 +168,9 @@
         the processor core is implemented. To accommodate various
         implementations, execute, load, and store address/data triggers may fire at
         whatever point in time is most convenient for the implementation.
+        For loads and AMOs with rd=x0 where the value that would have been loaded
+        to the destination register matches a Load Data trigger, it is
+        \unspecified\ whether the trigger fires or not.
         The debugger may request specific timings as described in \FcsrMcontrolTiming.
         Table~\ref{tab:hwbp_timing} suggests timings for the best user experience.
 
@@ -387,11 +390,11 @@
         </field>
         <field name="store" bits="1" access="WARL" reset="0">
             When set, the trigger fires on the virtual address or data of any
-            store.
+            store or AMO.
         </field>
         <field name="load" bits="0" access="WARL" reset="0">
             When set, the trigger fires on the virtual address or data of any
-            load.
+            load or AMO.
         </field>
     </register>
 
