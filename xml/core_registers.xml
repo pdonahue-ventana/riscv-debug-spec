@@ -175,8 +175,12 @@
         address of the next instruction to be executed at the time that
         debug mode was entered. \\
         \hline
-        halt request &amp; Address of the next instruction to be
+        halt request or halt group &amp; Address of the next instruction to be
         executed at the time that debug mode was entered \\
+        \hline
+        reset halt request &amp; Address of the next instruction to be
+        executed at the time that debug mode was entered (i.e. the address
+        of the reset handler) \\
         \hline
         \end{tabular}
         \end{table}
